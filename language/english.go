@@ -1,4 +1,4 @@
-package speak
+package language
 
 import "time"
 

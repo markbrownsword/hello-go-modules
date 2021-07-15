@@ -8,16 +8,13 @@ A working Go environment (Go v1.11+) on Linux
 
 [Install Go](https://golang.org/doc/install)
 
-Update system paths (add at the bottom of `~/.profile`)
+Update system paths (`~/.bashrc, ~/.zshrc etc`)
 ```sh
-export GOPATH=$HOME/Go # Add this Directory `$ mkdir ~/Go`
-export PATH=$PATH:$GOPATH/bin # Add this Directory `mkdir ~/Go/bin`
+# Go
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 ```
-Then
-```sh
-$ source ~/.profile
-```
+Then logout (or source the system file)
 
 ### Setup
 
@@ -29,10 +26,16 @@ e.g. ~/Projects/Go/github.com/markbrownsword/hello-go-modules
 Execute from project root
 
 ```sh
-$ go build -o $GOPATH/bin/hello-cli cmd/cli/main.go
-$ hello-cli
+$ go run ./cmd/speak/speak.go
 ```
-The -o flag outputs the compiled binary to the specified location
+
+### Install
+Execute from project root, installs to $GOPATH/bin
+
+```sh
+$ go install ./cmd/speak/speak.go
+$ speak
+```
 
 ### Test
 ```sh
