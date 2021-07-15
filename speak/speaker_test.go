@@ -1,6 +1,7 @@
 package speak_test
 
 import (
+    "github.com/markbrownsword/hello-go-modules/language"
 	"github.com/markbrownsword/hello-go-modules/speak"
 	"testing"
 	"time"
@@ -9,7 +10,7 @@ import (
 func TestSpeaker(t *testing.T) {
 	day := "Good Day"
 	night := "Good Evening"
-	english := speak.NewEnglish(day, night)
+	english := language.NewEnglish(day, night)
 	dayTime := time.Date(time.Now().Year(), time.Now().Month(), time.Now().Day(), 8, 0, 0, 0, time.UTC)
 	nightTime := time.Date(time.Now().Year(), time.Now().Month(), time.Now().Day(), 23, 0, 0, 0, time.UTC)
 
